@@ -971,7 +971,7 @@ function ImpactStatCard({ value, label, isSymbol }: { value: number | string; la
 // Video Section
 function VideoSection() {
   return (
-    <section className="py-24 px-4">
+    <section id="video" className="py-24 px-4">
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial="hidden"
