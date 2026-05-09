@@ -968,6 +968,51 @@ function ImpactStatCard({ value, label, isSymbol }: { value: number | string; la
   )
 }
 
+// Video Section
+function VideoSection() {
+  return (
+    <section className="py-24 px-4">
+      <div className="max-w-4xl mx-auto">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={staggerContainer}
+          className="text-center mb-12"
+        >
+          <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-display font-bold text-vahy-text mb-4">
+            Découvrez Vahy en Action <span className="text-gradient">Vidéo Présentation</span>
+          </motion.h2>
+          <motion.p variants={fadeInUp} className="text-lg md:text-xl text-vahy-muted">
+            Voir comment Vahy transforme l&apos;accès aux soins de santé à Madagascar
+          </motion.p>
+        </motion.div>
+        
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="glass rounded-3xl p-2 overflow-hidden"
+        >
+          <video
+            width="100%"
+            height="auto"
+            controls
+            className="w-full h-auto rounded-2xl bg-vahy-navy"
+          >
+            <source 
+              src="https://res.cloudinary.com/dyeebnukv/video/upload/v1778357448/Vahy_presentation_dg8n8m.mp4" 
+              type="video/mp4" 
+            />
+            Votre navigateur ne supporte pas la balise vidéo.
+          </video>
+        </motion.div>
+      </div>
+    </section>
+  )
+}
+
 // Final CTA Section
 function CTASection() {
   return (
@@ -1072,6 +1117,7 @@ export default function VahyLandingPage() {
       <Module4Section />
       <SafetySentinelSection />
       <ImpactSection />
+      <VideoSection />
       <CTASection />
       <Footer />
     </main>
